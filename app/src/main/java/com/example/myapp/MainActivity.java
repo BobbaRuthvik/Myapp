@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        storageReference = FirebaseStorage.getInstance().getReference("Images");
+
+        //storageReference = FirebaseStorage.getInstance().getReference("Images");
         databaseReference = FirebaseDatabase.getInstance().getReference("Images");
         btnbrowse = (Button)findViewById(R.id.ButtonChooseImage);
         btnupload= (Button)findViewById(R.id.ButtonUploadImage);
