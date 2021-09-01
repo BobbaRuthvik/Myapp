@@ -12,9 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Myapp">
         <activity
-            android:name=".sellNowPage"
-
-            android:exported="true">
+            android:name=".MainActivity2"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity11"
+            android:exported="true" />
+        <activity
+            android:name=".dashboard"
+            android:exported="true" />
+        <activity
+            android:name=".verifyenterotptwo"
+            android:exported="true" />
+        <activity
+            android:name=".entermobilenumberone"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,13 +33,18 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Category_page"
+            android:exported="true" />
+        <activity
+            android:name=".sellNowPage"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".profileCreate"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

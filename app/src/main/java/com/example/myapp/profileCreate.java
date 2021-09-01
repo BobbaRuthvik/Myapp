@@ -43,18 +43,19 @@ public class profileCreate extends AppCompatActivity {
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("Sellers");
 
-                String username = regUsername.getEditText().getText().toString();
-                String upi = regUpi.getEditText().getText().toString();
-                String address = regAddress.getEditText().getText().toString();
-                String city = regCity.getEditText().getText().toString();
-                String state = regState.getEditText().getText().toString();
-                String pincode = regPincode.getEditText().getText().toString();
+                String username = "UserName: "+regUsername.getEditText().getText().toString();
+                String upi = "UPI ID: "+regUpi.getEditText().getText().toString();
+                String address = "Address: "+regAddress.getEditText().getText().toString();
+                String city = "City: "+regCity.getEditText().getText().toString();
+                String state = "State: "+regState.getEditText().getText().toString();
+                String pincode = "PinCode: "+regPincode.getEditText().getText().toString();
 
                 profileCreationHelperClass helperclass = new profileCreationHelperClass(username,upi,address,city,state,pincode);
 
-                reference.setValue(helperclass);
-
-                Intent intent = new Intent( profileCreate.this, MainActivity.class);
+                String phonenumber=getIntent().getStringExtra("mobile");
+                reference.child(phonenumber).setValue(helperclass);
+                Intent intent = new Intent(getApplicationContext(), Category_page.class);
+                intent.putExtra("mobile", phonenumber.toString());
                 startActivity(intent);
 
             }

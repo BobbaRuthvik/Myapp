@@ -14,37 +14,34 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginLeft="-25dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="25dp"
             app:srcCompat="@drawable/home_new" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginStart="280dp"
-            android:layout_marginTop="-105dp"
+            android:layout_marginTop="-145dp"
             android:layout_marginBottom="240dp"
             app:srcCompat="@drawable/cart_new" />
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="300dp"
-            android:layout_height="280dp"
-            android:layout_marginLeft="50dp"
-            app:layout_constraintVertical_bias="0"
-            android:layout_marginTop="-270dp"
-            app:lottie_autoPlay="true"
-            android:id="@+id/lottie"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/sellanime" />
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="-290dp"
+            android:src="@drawable/finalicon2" />
 
         <LinearLayout
-            android:layout_width="380dp"
-            android:layout_height="380dp"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
             android:background="@drawable/roundstyle"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="-8dp"
+            android:layout_marginLeft="5dp"
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:orientation="vertical">
@@ -94,16 +91,16 @@
                 />
 
             <TextView
-                android:id="@+id/signUpButton"
+                android:id="@+id/textView2"
                 android:layout_width="180dp"
                 android:padding="10dp"
                 android:layout_height="50dp"
                 android:gravity="center"
-                android:background="@drawable/roundstyle"
-                android:backgroundTint="#EC6A96"
+                android:background="@drawable/pink_button"
+                app:backgroundTint="@null"
                 android:textSize="20dp"
-                android:textColor="@color/black"
-                android:text="Sell Now" />
+                android:textColor="@color/yellow"
+                android:text="Buy Now" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".profileCreate"
     android:orientation="vertical"
-    android:background="#2DCCA9"
+    android:background="@drawable/back1"
     >
 
     <ImageView
@@ -39,7 +39,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#D9D9D9" />
+                android:background="#FACCDB" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -54,7 +54,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#D9D9D9" />
+                android:background="#FACCDB" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -70,7 +70,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#D9D9D9" />
+                android:background="#FACCDB" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -86,7 +86,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#D9D9D9" />
+                android:background="#FACCDB" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -102,7 +102,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#D9D9D9" />
+                android:background="#FACCDB" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -118,7 +118,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#D9D9D9" />
+                android:background="#FACCDB" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -127,9 +127,10 @@
             android:layout_height="50dp"
             android:layout_gravity="bottom|center|center_vertical|fill_vertical"
             android:layout_margin="40dp"
-            android:backgroundTint="#2DCCA9"
+            app:backgroundTint="@null"
             android:gravity="center_vertical"
             android:text="@string/save_button"
+            android:background="@drawable/pink_button"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             app:cornerRadius="10dp"

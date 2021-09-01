@@ -9,9 +9,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
+
 import androidx.annotation.NonNull;
-import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,8 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -41,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
-        //storageReference = FirebaseStorage.getInstance().getReference("Images");
-        databaseReference = FirebaseDatabase.getInstance().getReference("Images");
+        storageReference = FirebaseStorage.getInstance().getReference("Sellers");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Sellers");
         btnbrowse = (Button)findViewById(R.id.ButtonChooseImage);
         btnupload= (Button)findViewById(R.id.ButtonUploadImage);
         txtdata = (EditText)findViewById(R.id.ImageNameEditText);
@@ -116,14 +119,22 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                            String TempImageName = txtdata.getText().toString().trim();
-                            String TempImagePrice = price.getText().toString().trim();
+                            String TempImageName = "Description: "+ txtdata.getText().toString().trim();
+                            String TempImagePrice = "Price: Rs." + price.getText().toString().trim();
                             progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
                             @SuppressWarnings("VisibleForTests")
                             uploadinfo imageUploadInfo = new uploadinfo(TempImageName, taskSnapshot.getUploadSessionUri().toString(),TempImagePrice);
-                            String ImageUploadId = databaseReference.push().getKey();
-                            databaseReference.child(ImageUploadId).setValue(imageUploadInfo);
+                            //String ImageUploadId = databaseReference.push().getKey();
+                            String phonenumber=getIntent().getStringExtra("mobile");
+                            //databaseReference.child(phonenumber).child("image details").setValue(imageUploadInfo);
+                            DatabaseReference ref=FirebaseDatabase.getInstance().getReference().child("Sellers").child(phonenumber);
+                            Map<String, Object> updates = new HashMap<String,Object>();
+                            updates.put("imageUrl",taskSnapshot.getUploadSessionUri().toString() );
+                            updates.put("imagePrice", TempImagePrice);
+                            updates.put("image Name",TempImageName);
+                            ref.updateChildren(updates);
+                            //ref.updateChildren(updates);
                         }
                     });
         }

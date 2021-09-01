@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class sellNowPage extends AppCompatActivity {
 
-    Button call_profile;
+    TextView call_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,8 @@ public class sellNowPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent( sellNowPage.this, profileCreate.class);
+                String phonenumber=getIntent().getStringExtra("mobile");
+                intent.putExtra("mobile", phonenumber.toString());
                 startActivity(intent);
             }
         });
